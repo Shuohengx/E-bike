@@ -2,7 +2,7 @@
 //  audiofeedback.swift
 //  Serial
 //
-//  Created by tianshu on 2018/3/27.
+//  Created by Hank Shieh on 2018/3/27.
 //  Copyright © 2018年 Balancing Rock. All rights reserved.
 //
 
