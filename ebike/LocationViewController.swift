@@ -236,7 +236,7 @@ class LocationViewController: UIViewController,MKMapViewDelegate,CLLocationManag
             annotation.title = location.title
             annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
             currentLeftTotalTime_dynamic = currentLeftTotalTime_dynamic + location.required_time
-   //         CurrentLeftTimerTotalLabel.text = "Count Down Timer:" + String(currentLeftTotalTime_dynamic)
+
             roadManager.checkPoints.append(annotation.coordinate)
             mapView.addAnnotation(annotation)
             
@@ -377,7 +377,7 @@ class LocationViewController: UIViewController,MKMapViewDelegate,CLLocationManag
                                 route = response.routes[0]
                                 //display required distance
                                 self.currentLeftdistance_dynamic = (response.routes.first?.distance)!
-                             //   self.DistanceIndividualRouteDynamicLabel.text = "The Left distance for route:" + String(self.currentLeftdistance_dynamic)+"m"
+                            
                                 
                         }
                         
@@ -419,7 +419,7 @@ class LocationViewController: UIViewController,MKMapViewDelegate,CLLocationManag
                     drawUserPolyLine(userLocation: location)   //draw user's route
                     traceUserLocation(location: location)
 //update left tiem and expected speed+user's speed
-              //      self.TimeIndividualRouteFixedLabel.text = "The fixed time for route:" + String(currentLefttime_fix) + "s"
+            
                    
                     
                     self.SpeedLabel.text = "The expected speed :" + String(format:"%2f",speed_expected)+"m/s"
@@ -460,12 +460,7 @@ class LocationViewController: UIViewController,MKMapViewDelegate,CLLocationManag
                 timer.cancel()
              }else
              {
-        //        let speed_greenwave = 22/3.6
-        //        self.NumberforVoltage = control.PID_realize(speed_current: self.speed_current, speed_reference: speed_greenwave)
-                
-        //        self.NumberforVoltage = self.control.PID_realize(speed_current: self.speed_current, speed_reference: self.speed_expected)
-      //          self.SpeedReferenceLabel.text = "Voltage level:" + String(self.NumberforVoltage)
-            
+       
            
                 if self.detection_flag == true
                 {
@@ -479,8 +474,7 @@ class LocationViewController: UIViewController,MKMapViewDelegate,CLLocationManag
                     
                 }
                 DispatchQueue.main.async {
-           //         self.CurrentLeftTimerTotalLabel.text = "Count Down Timer:" + String(self.currentLeftTotalTime_dynamic)
-           //         self.SpeedReferenceLabel.text = "Voltage level:" + String(self.NumberforVoltage)
+      
                     self.TimeIndividualRouteDynamicLabel.text = "Left Time for individual route:" + String(self.currentLeftTime_dynamic) + "s"
                     self.NumberforVoltage = self.control.PID_realize(speed_current: self.speed_current, speed_reference: self.speed_expected)
                     self.SpeedReferenceLabel.text = "Voltage level:" + String(self.NumberforVoltage)
